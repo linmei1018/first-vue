@@ -12,6 +12,10 @@ Vue.prototype.$http = axios
 
 import './api/mock.js'
 
+import share from 'vue-shares'
+Vue.use(share)
+Vue.component('V-share',share)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

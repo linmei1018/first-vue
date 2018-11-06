@@ -37,7 +37,7 @@ export default new Router({
       component: MyView
     },
     {
-      path: '/list/:id',
+      path: '/list/:id',   //后面加:id用于分辨是跳转到娱乐还是社会新闻路由
       name: 'NewList',
       component: NewList
     }

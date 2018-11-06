@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import FooterView from './components/Home/FooterView'
+  import FooterView from './components/FooterView'
 export default {
   name: 'App',
   components:{

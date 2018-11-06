@@ -4,6 +4,7 @@ import HomeView from '@/components/Home/HomeView'
 import NewsView from '@/components/Home/NewsView'
 import FavView from '@/components/Home/FavView'
 import MyView from '@/components/Home/MyView'
+import NewList from '@/components/NewListView'
 
 
 Vue.use(Router)
@@ -12,7 +13,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HomeView',
+      name: 'home',
       component: HomeView
     },
     {
@@ -34,6 +35,11 @@ export default new Router({
       path: '/my',
       name: 'MyView',
       component: MyView
+    },
+    {
+      path: '/list/:id',
+      name: 'NewList',
+      component: NewList
     }
   ]
 })

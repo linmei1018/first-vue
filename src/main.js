@@ -7,6 +7,11 @@ import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 Vue.use(MintUI)
 
+import axios from 'axios'
+Vue.prototype.$http = axios
+
+import './api/mock.js'
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

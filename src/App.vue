@@ -1,13 +1,17 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <router-view></router-view>
+    <FooterView></FooterView>
   </div>
 </template>
 
 <script>
+  import FooterView from './components/Home/FooterView'
 export default {
-  name: 'App'
+  name: 'App',
+  components:{
+    FooterView
+  }
 }
 </script>
 

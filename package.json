@@ -14,8 +14,10 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "iview": "^3.1.4",
     "mint-ui": "^2.2.13",
     "mockjs": "^1.0.1-beta3",
+    "node-sass": "^4.10.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vue-shares": "^1.1.3"

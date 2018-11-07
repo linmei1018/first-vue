@@ -12,8 +12,8 @@
         </mt-tab-item>
       </router-link>
       <router-link to="/fav" tag="div">
-        <mt-tab-item id="收藏">
-          收藏
+        <mt-tab-item id="通讯录">
+          通讯录
         </mt-tab-item>
       </router-link>
       <router-link to="/my" tag="div">

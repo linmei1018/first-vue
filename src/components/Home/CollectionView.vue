@@ -1,6 +1,6 @@
 <template>
   <div>
-    <mt-header fixed title="首页"></mt-header>
+    <mt-header fixed title="收藏"></mt-header>
     <div class="home-content">
       <mt-actionsheet
         :actions="actions"

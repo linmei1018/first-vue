@@ -1,6 +1,6 @@
 <template>
   <div>
-    <mt-header fixed title="新闻"></mt-header>
+    <mt-header fixed title="最近通话"></mt-header>
     <div class="container">
       <router-link to="/list/yule">
         <h1>娱乐新闻</h1>

@@ -29,6 +29,9 @@
   </footer>
 </template>
 <style scoped>
+  .mint-tabbar{
+    position:fixed;
+  }
   /*<!-- 给这个元素下面的div都添加：flex:1; -->*/
   .mint-tabbar > div{
     flex:1;

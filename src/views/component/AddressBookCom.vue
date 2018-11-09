@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="header" :class="isClick?'HeaderHidden':''" >
+    <div class="header" v-if="isClick"  >
       <p style="width:95%">通讯录</p>
       <Icon type="md-add" size="20" style="line-height:40px;" @click="addSearch" />
     </div>
@@ -58,9 +58,8 @@
 <script>
   export default {
     props: {
-      isCollection: { //个人收藏
-        type: Boolean,
-        default: false
+      isName: { //个人收藏
+        type: String,
       },
     },
     data(){
@@ -108,46 +107,46 @@
         addPhoneArr:[],
       }
     },
-    methods:{
+    methods: {
       //点击搜索框事件
-      searchName(){
+      searchName() {
         this.isClick = true;
       },
       //关闭遮罩层
-      shadowCancel(){
+      shadowCancel() {
         this.isClick = false;
       },
       //搜索框Change事件
-      searchChange(){
+      searchChange() {
         this.isChange = true;
       },
       //取消搜索
-      cancelSearch(){
+      cancelSearch() {
         this.isClick = false;
         this.isChange = false;
         this.searchKey = '';
       },
       //添加通讯录
-      addSearch(){
+      addSearch() {
         this.popupVisible = true;
       },
       //添加联系人完成
-      complete(){
-        if(this.username || this.companyname || this.mobilephone){
+      complete() {
+        if (this.username || this.companyname || this.mobilephone) {
           alert(1)
         }
       },
       //添加电话
-      addPhone(a){
-        this.showPhone=true;
-        let label = [ '住宅','工作','主要' ];
+      addPhone(a) {
+        this.showPhone = true;
+        let label = ['住宅', '工作', '主要'];
         if (this.addPhoneArr.length < 3) {
           this.addPhoneArr.push({
             tel: '',
-            label: label[this.addPhoneArr.length ],
+            label: label[this.addPhoneArr.length],
             phone: '电话'
           });
-        }else{
+        } else {
           this.addPhoneArr.push({
             num: a[a.length - 1].num + 1,
             tel: '',
@@ -157,19 +156,20 @@
         }
       },
       //删除新建电话
-      removeAddPhone(index){
+      removeAddPhone(index) {
         this.addPhoneArr.splice(index, 1)
       },
       //取消新建联系人
-      cancelAddPhone(){
-        this.popupVisible=false;
+      cancelAddPhone() {
+        this.popupVisible = false;
         this.addPhoneArr = [];
-        this.username='';
-        this.companyname='';
-        this.mobilephone='';
-      }
+        this.username = '';
+        this.companyname = '';
+        this.mobilephone = '';
+      },
     }
   }
+  
 </script>
 <style scoped>
   @import '../AddressBookView/AddressBookView.css';

@@ -1,4 +1,4 @@
-<style scoped>
+<style scoped lang="less">
   @import 'CollectionView.css';
 </style>
 <template>

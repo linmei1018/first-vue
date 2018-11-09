@@ -11,6 +11,8 @@ Vue.use(MintUI)
 
 Vue.use(iView)
 
+import 'jquery'
+
 import axios from 'axios'
 Vue.prototype.$http = axios
 

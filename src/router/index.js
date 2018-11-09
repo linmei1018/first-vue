@@ -6,6 +6,7 @@ import AddressBook from '@/views/AddressBookView/AddressBookView'
 import Dial from '@/views/DialView/DialView'
 import NewList from '@/views/NewListView'
 import ToAddressBook from '@/views/CollectionView/AddressBook/AddressBook'
+import ContactsDetails from '@/views/component/ContactsDetails'
 
 
 Vue.use(Router)
@@ -46,6 +47,11 @@ export default new Router({
       path: '/to_address_book'  ,
       name: 'ToAddressBook',
       component: ToAddressBook
+    },
+    {
+      path: '/contacts_details/:title'  ,
+      name: 'ContactsDetails',
+      component: ContactsDetails
     }
   ]
 })

@@ -2,9 +2,9 @@
   <footer>
     <mt-tabbar>
       <router-link to="/collection" tag="div">
-        <mt-tab-item id="收藏">
+        <mt-tab-item id="个人收藏">
           <Icon type="ios-star-outline" size="26" />
-          <p>收藏</p>
+          <p>个人收藏</p>
         </mt-tab-item>
       </router-link>
       <router-link to="/recent_calls" tag="div">

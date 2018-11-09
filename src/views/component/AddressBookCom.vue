@@ -49,7 +49,7 @@
       <h3 style="height:40px;line-height:40px;">本机号码：13879136593</h3>
       <mt-index-list>
         <mt-index-section v-for="item in result" :index="item.value" :key="item.value">
-          <mt-cell v-for="(items,index) in item.title" :key="index" :title="items"></mt-cell>
+          <mt-cell v-for="(items,index) in item.title" :key="index" :title="items" @click="phoneItem(index)"></mt-cell>
         </mt-index-section>
       </mt-index-list>
     </div>
@@ -138,7 +138,6 @@
       },
       //添加电话
       addPhone(a) {
-        this.showPhone = true;
         let label = ['住宅', '工作', '主要'];
         if (this.addPhoneArr.length < 3) {
           this.addPhoneArr.push({
@@ -167,9 +166,13 @@
         this.companyname = '';
         this.mobilephone = '';
       },
+      //
+      phoneItem(index){
+        alert(index)
+      }
     }
   }
-  
+
 </script>
 <style scoped>
   @import '../AddressBookView/AddressBookView.css';

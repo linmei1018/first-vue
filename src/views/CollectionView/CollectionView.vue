@@ -5,7 +5,7 @@
   <div>
     <div class="home-header">
       <Icon type="md-add" size="20" style="line-height:40px;" @click="addCollection" />
-      <p style="width:90%">收藏</p>
+      <p style="width:90%">个人收藏</p>
       <div style="display: none;">
         <i-button class="editBtn" tyle="default" size="small" @click="editCollection">编辑</i-button>
       </div>
@@ -18,7 +18,7 @@
             <Row>
               <Col span="3"><Icon type="ios-contact" size="32" style="color:#595b5d"/></Col>
               <Col span="18" style="text-align:left;"><span>姓名</span></Col>
-              <Col span="3"><Icon type="ios-information-circle-outline" size="20" style="color:#26a2ff"/></Col>
+              <Col span="3"><Icon type="ios-information-circle-outline" size="20" style="color:#26a2ff" @click="details" /></Col>
             </Row>
           </li>
         </ul>
@@ -46,6 +46,10 @@
       //编辑联系人
       editCollection(){
 
+      },
+      //联系人详细信息
+      details(){
+        this.$router.push('/contacts_details/collection');
       }
 
     },

@@ -6,7 +6,7 @@
       <Button class="editBtn" size="small" @click="editContacts">编辑</Button>
       <div>
         <Icon type="ios-contact" size="100" style="color:#ccc;margin-right:35px;" />
-        <h3>名字</h3>
+        <h3>{{ name }}</h3>
       </div>
       <div class="icon-list">
         <Row>
@@ -35,13 +35,14 @@
     data(){
       return{
         title:this.$route.params.title,
+        name:this.$route.params.name,
         ContactsArr:["发送信息","共享联系人","添加到个人收藏","共享我的位置"]
       }
     },
     methods:{
       //返回到个人收藏
       backCollection(){
-
+        this.$router.go(-1);
       },
       //编辑联系人信息
       editContacts(){
@@ -49,11 +50,12 @@
       }
     },
     mounted(){
-      if(this.title ===  'collection'){
-        this.title = '个人收藏'
-      }else{
-        this.title = '通讯录'
-      }
+      console.log(this.title)
+      // if(this.Title ===  'collection'){
+      //   this.Title = '个人收藏'
+      // }else{
+      //   this.Title = '通讯录'
+      // }
     }
 
   }

@@ -49,7 +49,7 @@ export default new Router({
       component: ToAddressBook
     },
     {
-      path: '/contacts_details/:title'  ,
+      path: '/contacts_details/:title/:name'  ,
       name: 'ContactsDetails',
       component: ContactsDetails
     }

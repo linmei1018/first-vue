@@ -45,17 +45,17 @@ export default new Router({
       component: NewList
     },
     {
-      path: '/to_address_book'  ,
+      path: '/to_address_book',
       name: 'ToAddressBook',
       component: ToAddressBook
     },
     {
-      path: '/contacts_details/:title/:name'  ,
+      path: '/contacts_details/:title/:name',
       name: 'ContactsDetails',
       component: ContactsDetails
     },
     {
-      path: '/phone_call'  ,
+      path: '/phone_call/:phoneNumber',
       name: 'PhoneCall',
       component: PhoneCall
     }

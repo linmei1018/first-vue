@@ -16,7 +16,7 @@
           </Row>
         </li>
       </ul>
-      <div class="phoneCall" @click="phoneCall"><Icon type="ios-call" size="40" /></div>
+      <div class="phoneCall" @click="phoneCall(number)"><Icon type="ios-call" size="40" /></div>
     </div>
     <!--新建联系人下侧弹窗-->
     <mt-actionsheet
@@ -77,9 +77,9 @@
         this.isChecked = this.dialArr[index].numberArr[num];
       },
       //打电话
-      phoneCall(){
+      phoneCall(phoneNumber){  console.log(phoneNumber)
         if(this.number!==''){
-          this.$router.push({ name: 'PhoneCall' });
+          this.$router.push('/phone_call/'+ phoneNumber);
         }
       }
     }
@@ -138,14 +138,14 @@
       }
     }
     .phoneCall{
-      height:70px;
-      width:70px;
-      border-radius: 40px;
-      line-height:70px;
-      color:#fff;
-      background:springgreen;
-      margin: 20px auto;
-    }
+       height:70px;
+       width:70px;
+       border-radius: 40px;
+       line-height:70px;
+       color:#fff;
+       background:springgreen;
+       margin: 20px auto;
+     }
   }
 </style>
 

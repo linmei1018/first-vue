@@ -26,6 +26,11 @@ ul{
   margin-top:-20px;
   padding-left: 10px;
 }
+.no-collection{
+  margin:50% auto;
+  font-size:18px;
+  color:#ccc;
+}
 .collectionList{
   height:50px;
   line-height:50px;

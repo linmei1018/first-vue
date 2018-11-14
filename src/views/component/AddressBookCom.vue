@@ -49,7 +49,7 @@
       <h3 style="height:40px;line-height:40px;">本机号码：13879136593</h3>
       <mt-index-list>
         <mt-index-section v-for="item in result" :index="item.value" :key="item.value">
-          <mt-cell v-for="(items,index) in item.title" :key="index" :title="items" @click="phoneItem(index)"></mt-cell>
+          <mt-cell v-for="(items,index) in item.title" :key="index" :title="items" @click.native="phoneItem(index)" ></mt-cell>
         </mt-index-section>
       </mt-index-list>
     </div>

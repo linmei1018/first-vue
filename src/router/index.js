@@ -4,7 +4,6 @@ import Collection from '@/views/CollectionView/CollectionView'
 import RecentCalls from '@/views/RecentCallsView/RecentCallsView'
 import AddressBook from '@/views/AddressBookView/AddressBookView'
 import Dial from '@/views/DialView/DialView'
-import NewList from '@/views/NewListView'
 import ToAddressBook from '@/views/CollectionView/AddressBook/AddressBook'
 import ContactsDetails from '@/views/component/ContactsDetails'
 import PhoneCall from '@/views/component/PhoneCall'
@@ -38,11 +37,6 @@ export default new Router({
       path: '/dial',
       name: 'Dial',
       component: Dial
-    },
-    {
-      path: '/list/:id',   //后面加:id用于分辨是跳转到娱乐还是社会新闻路由
-      name: 'NewList',
-      component: NewList
     },
     {
       path: '/to_address_book',

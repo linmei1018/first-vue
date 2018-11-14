@@ -4,7 +4,7 @@
 <template>
   <div>
     <div class="home-header">
-      <Icon type="md-add" size="20" style="line-height:40px;" @click="addCollection" />
+      <Icon type="md-add" size="20" style="line-height:40px;" @click="addCollection" v-if="!removeBtn" />
       <p style="width:90%">{{ title }}</p>
       <div v-if='this.collectionArr.length > 0'>
         <i-button v-if="removeBtn" class="editBtn" tyle="default" size="small" @click="completeEdit">完成</i-button>
@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="home-content">
-      <p v-if='this.collectionArr.length === 0'>无个人收藏</p>
+      <p class="no-collection" v-if='this.collectionArr.length === 0'>无个人收藏</p>
       <div>
         <ul>
           <li class="collectionList" v-for="(item,index) in collectionArr" :key="index">

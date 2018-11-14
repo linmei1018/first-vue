@@ -52,12 +52,7 @@ export default {
       }
     },
     mounted(){
-      // setInterval (function () {
-      //   $(".").animate({marginLeft:"-1000px"},1000);
-      //   $(".phoneText").animate({css:"通话结束"},1000);
-      //
-      // },100);
-
+      
     }
 }
 
@@ -75,8 +70,10 @@ export default {
     padding-top:60px;
     z-index:1;
     .PhoneHeader{
+      margin:0 20px;
       .phoneNumber{
         font-size:36px;
+        overflow:auto;
       }
     }
     .PhoneConter{

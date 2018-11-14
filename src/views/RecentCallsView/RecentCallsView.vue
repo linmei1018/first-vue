@@ -41,51 +41,10 @@
   export default {
     data(){
       return{
-        isChecked: false,
-        recentCallsArr:[
-          {
-            outboundCall:true, //是否是拨出电话
-            phoneName:'180-4676-2241',
-            phoneState:'手机',  //状态
-            phonefrequency:'',  //通话次数
-            phoneTime:'今天',
-            isMissedCall: false  //是否是未接来电
-          },
-          {
-            outboundCall:false,
-            phoneName:'A名字',
-            phoneState:'南昌,江西',
-            phonefrequency:'2',
-            phoneTime:'星期一',
-            isMissedCall: false
-          },
-          {
-            outboundCall:false,
-            phoneName:'15467484',
-            phoneState:'未知',
-            phonefrequency:'',
-            phoneTime:'昨天',
-            isMissedCall: false
-          },
-          {
-            outboundCall: true,
-            phoneName:'家人',
-            phoneState:'手机',
-            phonefrequency:'5',
-            phoneTime:'2018/11/11',
-            isMissedCall: true
-          },
-          {
-            outboundCall:false,
-            phoneName:'朋友',
-            phoneState:'南昌,江西',
-            phonefrequency:'3',
-            phoneTime:'2018/11/5',
-            isMissedCall: true
-          }
-        ],
-        isAllCall:true,
-        editRecentCall:false,
+        isChecked: false, //所有通话和未接来电按钮切换
+        recentCallsArr:[],  //所有最近通话列表
+        isAllCall:true,   //显示未接来电列表
+        editRecentCall:false,  //隐藏清除和完成按钮
         //清除下侧弹窗
         cleanModel:false,
         actions:[
@@ -95,7 +54,7 @@
           }
 
         ],
-        //
+        //清空列表时隐藏编辑按钮
         isClean: false,
       }
     },
@@ -132,6 +91,14 @@
         this.editRecentCall = false;
         this.isClean = true;
       }
+    },
+    mounted(){
+      this.$http({
+        method:'get',
+        url:'/recentCallsList'
+      }).then(res => {
+        this.recentCallsArr = res.data.recentCalls;
+      });
     }
   }
 </script>

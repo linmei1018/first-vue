@@ -44,14 +44,7 @@
       return {
         title: '个人收藏',
         removeBtn: false, //是否显示删除按钮
-        collectionArr:[
-          {
-            name: '张三',
-          },
-          {
-            name: '李四',
-          }
-        ]
+        collectionArr:[]
       };
     },
     methods: {
@@ -77,7 +70,12 @@
       }
     },
     mounted(){
-
+      this.$http({
+        method:'get',
+        url:'/collectionList'
+      }).then( res => {
+        this.collectionArr = res.data.collection;
+      })
     }
   };
 </script>

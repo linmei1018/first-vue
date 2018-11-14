@@ -5,6 +5,9 @@ import App from './App'
 import router from './router'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
+import './api/recentCalls.js'
+import './api/addressBook.js'
+import './api/collection.js'
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 Vue.use(MintUI)
@@ -16,7 +19,7 @@ import 'jquery'
 import axios from 'axios'
 Vue.prototype.$http = axios
 
-import './api/mock.js'
+import './api/recentCalls.js'
 
 import share from 'vue-shares'
 Vue.use(share)

@@ -16,10 +16,6 @@
 .collection-header{
   background-color: #fff;
 }
-.add-search-popup{
-  width:100%;
-  height:100%;
-}
 .changeSearch{
   display:none;
 }
@@ -44,26 +40,15 @@
   height:100%;
   margin-top:-20px;
 }
+.add-search-popup{
+  width:100%;
+  height:100%;
+}
 .addHeader{
   height:40px;
   line-height:40px;
   width:100%;
   text-align:center;
-}
-.cancelBtn{
-  color:#5394ec;
-  background-color:#e8eaed;
-}
-.addText{
-  font-weight: bold;
-}
-.okBtn{
-  background-color:#e8eaed;
-  color:#595959;
-}
-.complete-active{
-  background-color:#e8eaed;
-  color:#5394ec;
 }
 .add-phone{
   height:48px;

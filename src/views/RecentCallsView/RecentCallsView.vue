@@ -85,7 +85,7 @@
       cleanRecentCall(){
         this.cleanModel = true;
       },
-      //清除所以最近通话
+      //清除所有最近通话
       cleanAll(){
         this.recentCallsArr = [];
         this.editRecentCall = false;

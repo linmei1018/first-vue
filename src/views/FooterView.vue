@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <mt-tabbar>
+    <mt-tabbar v-model="selected" fixed>
       <router-link to="/collection" tag="div">
         <mt-tab-item id="个人收藏">
           <Icon type="ios-star-outline" size="26" />
@@ -28,10 +28,16 @@
     </mt-tabbar>
   </footer>
 </template>
-<style scoped>
-  .mint-tabbar{
-    position:fixed;
+<script>
+  export default {
+    data(){
+      return{
+        selected:'最近通话'
+      }
+    }
   }
+</script>
+<style scoped>
   /*<!-- 给这个元素下面的div都添加：flex:1; -->*/
   .mint-tabbar > div{
     flex:1;

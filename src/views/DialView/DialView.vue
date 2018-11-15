@@ -2,7 +2,7 @@
   <div>
     <mt-header fixed title="拨号"></mt-header>
     <div class="dialHeader">
-      <Col span="2" style="float:left;"><Icon v-show="number" type="ios-add-circle-outline" class="dialIcon" @click="addContactsBtn" /></Col>
+      <Col span="2" style="float:left;"><Icon v-show="number" type="ios-add-circle-outline" class="dialIcon" @click="sheetVisible = true" /></Col>
       <Col span="20" style="float:left;"><p class="dialText">{{ number }}</p></Col>
       <Col span="2" style="float:right;"><Icon v-show="number" type="ios-backspace-outline" class="dialIcon" @click="removeBtn" /></Col>
     </div>
@@ -23,16 +23,30 @@
       :actions="actions"
       v-model="sheetVisible">
     </mt-actionsheet>
+    <!--新建联系人下侧弹窗end-->
+    <!--新建联系人弹窗 begin-->
+    <mt-popup
+      v-model="DialModel"
+      class="add-search-popup"
+      position="bottom">
+      <add-to-address-book :phoneNumber="this.number"
+                           @cancelAddPhone="cancelAddPhoneBtn"></add-to-address-book>
+    </mt-popup>
+    <!--新建联系人弹窗end-->
   </div>
 </template>
 <script>
+  import AddToAddressBook from '@/views/component/AddToAddressBook'
   export default {
+    components: {AddToAddressBook},
     data(){
       return{
         sheetVisible: false, //下侧弹窗
+        DialModel: false, //新建联系人
         actions:[  //下侧弹窗内容
           {
             name:'新建联系人',
+            method: this.addContact
           },
           {
             name:'添加到现有联系人'
@@ -62,8 +76,8 @@
     },
     methods:{
       //新建联系人
-      addContactsBtn(){
-        this.sheetVisible = true;
+      addContact(){
+        this.DialModel = true;
       },
       //删除
       removeBtn(){
@@ -77,15 +91,54 @@
         this.isChecked = this.dialArr[index].numberArr[num];
       },
       //打电话
-      phoneCall(phoneNumber){  console.log(phoneNumber)
+      phoneCall(phoneNumber){
         if(this.number!==''){
           this.$router.push('/phone_call/'+ phoneNumber);
         }
+      },
+      //取消
+      cancelAddPhoneBtn(){
+        this.DialModel = false;
+        this.number = '';
+        this.isChecked = '';
       }
     }
   }
 </script>
 <style lang="less">
+  //新建联系人弹窗样式
+  .add-search-popup{
+    width:100%;
+    height:100%;
+  }
+  .addHeader{
+    height:40px;
+    line-height:40px;
+    width:100%;
+    text-align:center;
+  }
+  .add-phone{
+    height:48px;
+    font-size: 16px;
+    line-height: 48px;
+    text-align:left;
+    overflow: hidden;
+    padding: 0 10px;
+    width: 100%;
+    border-bottom:1px solid #ccc;
+  }
+  .mint-cell{
+    border-bottom:1px solid #ccc;
+  }
+  .okBtn{
+    background-color:#e8eaed;
+    color:#595959;
+  }
+  .complete-active{
+    background-color:#e8eaed;
+    color:#5394ec;
+  }
+  ////////////////////
   .dialHeader{
     height:40px;
     line-height:40px;

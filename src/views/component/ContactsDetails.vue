@@ -10,8 +10,8 @@
       </div>
       <div class="icon-list">
         <Row>
-          <Col span="6"><div class="item-icon blue-icon"><Icon type="ios-chatbubbles" size="20" /></div><p class="information">短信</p></Col>
-          <Col span="6"><div class="item-icon blue-icon"><Icon type="ios-call" size="20" /></div><p class="information">手机</p></Col>
+          <Col span="6"><div class="item-icon blue-icon"><Icon type="ios-chatbubbles" size="20" @click="SendInformation" /></div><p class="information">短信</p></Col>
+          <Col span="6"><div class="item-icon blue-icon"><Icon @click="toPhoneCall" type="ios-call" size="20" /></div><p class="information">手机</p></Col>
           <Col span="6"><div class="item-icon grey-icon"><Icon type="ios-videocam" size="20" /></div><p class="information">视频</p></Col>
           <Col span="6"><div class="item-icon grey-icon"><Icon type="ios-mail" size="20" /></div><p class="information">邮件</p></Col>
         </Row>
@@ -47,15 +47,18 @@
       //编辑联系人信息
       editContacts(){
         alert(this.title)
+      },
+      //拨打电话
+      toPhoneCall(){
+        this.$router.push('/phone_call/'+ this.name);
+      },
+      //发送信息
+      SendInformation(){
+        alert('发送信息未开发！')
       }
     },
     mounted(){
-      console.log(this.title)
-      // if(this.Title ===  'collection'){
-      //   this.Title = '个人收藏'
-      // }else{
-      //   this.Title = '通讯录'
-      // }
+
     }
 
   }

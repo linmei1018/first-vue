@@ -36,3 +36,4 @@ npm test
 
 ## 觉得不错 赏个咖啡 让作者打起精神 ~
 <img src="./src/assets/QR-code.png" width="400px" height="460px" >
+<img src="@/src/assets/QR-code.png" width="400px" height="460px" >

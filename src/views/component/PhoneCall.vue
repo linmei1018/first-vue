@@ -2,7 +2,7 @@
   <div class="phoneCallView">
     <div class="PhoneHeader">
       <p class="phoneNumber">{{ phoneNumber }}</p>
-      <p class="phoneText">正在呼叫中...</p>
+      <p class="phoneText">{{ phoneText }}</p>
       <!--通话即将结束/通话结束-->
     </div>
     <div class="PhoneConter">
@@ -42,13 +42,21 @@ export default {
             Icon:['md-add','ios-videocam','ios-person'],
             text:['添加通话','FaceTime','通讯录']
           }
-        ]
+        ],
+        phoneText:'正在呼叫中...'
       }
     },
     methods:{
       //挂断
       HangUp(){
-        this.$router.go(-1);
+        // setTimeout( () => {
+        //   this.phoneText = '通话即将结束'
+        // }, 2000);
+        setTimeout( () => {
+          this.phoneText = '通话结束';
+          this.$router.go(-1);
+        }, 5000)
+
       }
     },
     mounted(){

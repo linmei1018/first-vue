@@ -1,6 +1,6 @@
 np# rem-vue-demo
 
-> rem 适配移动实例
+> 模仿手机电话demo
 
 ## Build Setup
 
@@ -26,5 +26,8 @@ npm run e2e
 # run all tests
 npm test
 ```
+
+# remarks
+> 因为是模拟手机电话页面，有些功能还未开发
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

@@ -1,7 +1,7 @@
 {
   "name": "rem-vue-demo",
   "version": "1.0.0",
-  "description": "rem 适配移动实例",
+  "description": "模拟手机电话demo",
   "author": "linmei",
   "private": true,
   "scripts": {
